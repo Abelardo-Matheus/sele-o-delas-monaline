@@ -3,13 +3,6 @@
  * Breakpoints: 380px (celulares grandes), 768px (tablet), 1024px (PC).
  */
 
-/* Celulares muito pequenos */
-@media (max-width: 359px) {
-  .features {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Celulares grandes */
 @media (min-width: 380px) {
   :root {
@@ -27,7 +20,15 @@
   }
 
   .site-header__logo {
-    width: 280px;
+    width: 150px;
+  }
+
+  .avatar {
+    width: 68px;
+  }
+
+  .avatar__seal {
+    width: 30px;
   }
 
   .btn {
@@ -35,7 +36,10 @@
     min-width: 340px;
   }
 
+  /* Tablet/PC: cards lado a lado (2 ou 3, conforme a página) */
   .features {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: none;
     gap: var(--space-5);
   }
 
@@ -44,7 +48,7 @@
   }
 }
 
-/* PC — mantém tudo centralizado em uma coluna, só com mais respiro */
+/* PC — mantém o conteúdo centralizado em uma coluna, só com mais respiro */
 @media (min-width: 1024px) {
   :root {
     --container: 720px;
@@ -56,20 +60,15 @@
   }
 
   .site-header__logo {
-    width: 300px;
+    width: 160px;
+  }
+
+  .avatar {
+    width: 72px;
   }
 
   .hero {
-    padding-block: var(--space-6) var(--space-10);
-  }
-
-  .hero__media {
-    width: 280px;
-  }
-
-  .hero__seal {
-    width: 92px;
-    right: -30px;
+    padding-block: var(--space-10) var(--space-10);
   }
 
   .hero__subtitle {
